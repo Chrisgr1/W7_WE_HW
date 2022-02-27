@@ -1,0 +1,6 @@
+.details {
+    flex-direction: row;
+    text-align: center;
+    color: blue;
+    padding-inline:20%
+}
