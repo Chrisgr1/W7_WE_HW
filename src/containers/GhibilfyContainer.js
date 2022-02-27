@@ -9,6 +9,7 @@ const GhibilfyContainer = () => {
     
     const [films, setFilms] = useState([])
     const [selectedFilmId, setSelectedFilmId] = useState('')
+    
 
     useEffect(() => {
     getFilms()
@@ -41,7 +42,8 @@ const GhibilfyContainer = () => {
         <div className="main-container">
         <h1>Ghiblify Container</h1>
         <FilmSelector films={films} onFilmSelected={handleFilmSelected} />
-        <p>{selectedFilm}</p>
+        <p>Selected film: {selectedFilm}</p>
+        <p>Selected film Id: {selectedFilmId}</p>
         
         <FilmDetail selectedFilm={selectedFilm} onFavouriteToggle={handleFavouriteToggle} />
 

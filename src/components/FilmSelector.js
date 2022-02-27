@@ -14,10 +14,13 @@ const FilmSelector = ({films, onFilmSelected}) => {
         })
     
         return(
+            <>
+            Film Selector
             <select defaultValue="" onChange={handleChange}>
                 <option >Choose Ghibli Film</option>
                     {filmOptions}
             </select>
+            </>
         )
 }
 
