@@ -20,8 +20,8 @@ const GhibilfyContainer = () => {
             .then(filmsData => setFilms(filmsData))
         }
     
-    const handleFilmSelected = id => {
-        setSelectedFilmId(id)
+    const handleFilmSelected = film => {
+        setSelectedFilmId(film.id)
 }
 
     const handleFavouriteToggle = (id) => {
@@ -35,8 +35,6 @@ const GhibilfyContainer = () => {
     }
 
     const selectedFilm = films.find(film => film.id === selectedFilmId);
-
-    const onFilmSelected = (film) => {setSelectedFilmId(film.id)};
 
 
     return (

@@ -4,12 +4,12 @@ const FilmSelector = ({films, onFilmSelected}) => {
         onFilmSelected(event.target.value);
     }
 
-        const filmOptions = films.map((film) => {
+        const filmOptions = films.map(film => {
             return  <option 
-                value={film.id} 
-                key={film.id}
+                value = { film.id } 
+                key = { film.id }
                 >
-                    {film.title}
+                    { film.title }
                 </option>
         })
     

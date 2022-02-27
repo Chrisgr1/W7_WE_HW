@@ -1,4 +1,3 @@
-import GhibilfyContainer from "../containers/GhibilfyContainer"
 import'./FilmDetail.css';
 
 const FilmDetail = ({selectedFilm, onFavouriteToggle}) => {
