@@ -1,16 +1,18 @@
-const FilmSelector = ({films, onFilmSelected}) => {
+const FilmSelector = ({films, handleFilmSelected}) => {
 
     const handleChange = event => {
-        onFilmSelected(event.target.value);
+        handleFilmSelected(event.target.value);
     }
 
         const filmOptions = films.map(film => {
-            return  <option 
+            return (
+            <option 
                 value = { film.id } 
                 key = { film.id }
                 >
                     { film.title }
                 </option>
+            )
         })
     
         return(

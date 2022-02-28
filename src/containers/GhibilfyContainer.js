@@ -9,7 +9,9 @@ const GhibilfyContainer = () => {
     
     const [films, setFilms] = useState([])
     const [selectedFilmId, setSelectedFilmId] = useState('')
-    
+    const [selectedFilm, setSelectedFilm] = useState(null)
+
+
 
     useEffect(() => {
     getFilms()
@@ -21,8 +23,9 @@ const GhibilfyContainer = () => {
             .then(filmsData => setFilms(filmsData))
         }
     
-    const handleFilmSelected = film => {
-        setSelectedFilmId(film.id)
+    const handleFilmSelected = id => {    
+            const selectedFilm = films.find(film => film.id === id);
+            setSelectedFilm(selectedFilm)
 }
 
     const handleFavouriteToggle = (id) => {
@@ -35,15 +38,11 @@ const GhibilfyContainer = () => {
         setFilms(updatedFilms)
     }
 
-    const selectedFilm = films.find(film => film.id === selectedFilmId);
-
-
     return (
         <div className="main-container">
         <h1>Ghiblify Container</h1>
-        <FilmSelector films={films} onFilmSelected={handleFilmSelected} />
-        <p>Selected film: {selectedFilm}</p>
-        <p>Selected film Id: {selectedFilmId}</p>
+        <FilmSelector films={films} handleFilmSelected={handleFilmSelected} />
+
         
         <FilmDetail selectedFilm={selectedFilm} onFavouriteToggle={handleFavouriteToggle} />
 

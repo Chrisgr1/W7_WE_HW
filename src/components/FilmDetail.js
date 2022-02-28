@@ -22,8 +22,7 @@ const FilmDetail = ({selectedFilm, onFavouriteToggle}) => {
             <div className="details">
                 <p>{selectedFilm.description}</p>
             </div>
-
-        </div>
+        <button onClick={handleClick}>{favouriteBtnText}</button>        </div>
     )
 }
 
